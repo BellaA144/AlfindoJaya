@@ -1,8 +1,9 @@
-function scrollToAboutMe() {
-    document.getElementById('aboutMe').scrollIntoView({ behavior: 'smooth' });
-}
 window.addEventListener('scroll', function() {
     var productContainer = document.querySelector('.productContainer');
+    if (!productContainer) {
+        console.warn('productContainer not found in the DOM');
+        return;
+    }
     var sectionPosition = productContainer.getBoundingClientRect().top;
     var screenPosition = window.innerHeight / 1.3;
 
@@ -12,3 +13,4 @@ window.addEventListener('scroll', function() {
         productContainer.classList.remove('visible');
     }
 });
+
