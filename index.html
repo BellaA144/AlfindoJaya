@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALFINDO JAYA</title>
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="leftNav">
                 <div class="NavProfile">
-                    <img src="./Assets/Logo.png" alt="">
+                    <h1>ALFINDO JAYA</h1>
                 </div>
                 <div class="NavMenu">
                     <ul>
-                        <li><h4>Home</h4></li>
-                        <li><h4>About</h4></li>
-                        <li><h4>Product</h4></li>
-                        <li><h4>Contact Us</h4></li>
+                        <li><a href="#" class="hyperlink"><h4>Home</h4></a></li>
+                        <li><a href="#aboutMe" class="hyperlink"><h4>About</h4></a></li>
+                        <li><a href="#" class="hyperlink"><h4>Product</h4></a></li>
+                        <li><a href="#contactUs" class="hyperlink"><h4>Contact Us</h4></a></li>
                     </ul>
                 </div>
             </div>
@@ -55,18 +55,135 @@
                     </div>
                     <div class="rightDetail">
                         <div class="detailButton">
-                            <button>Know More</button>
+                            <button onclick="scrollToAboutMe()">Know More</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="aboutMe">
-            ppp
+        <div class="aboutMe" id="aboutMe">
+            <div class="aboutDesc">
+                <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque corporis voluptas nisi sit qui illo consectetur ea maiores optio rem nesciunt nemo, nostrum eius sint saepe voluptatibus dolorum natus inventore!</h4>
+            </div>
+            <div class="aboutImg">
+                <img src="./Assets/ChibiRobot2.png" alt="">
+            </div>
+        </div>
+        <div class="productMenu">
+            <div class="productContainer">
+                <div class="productTitle">
+                    <h4>Handphone</h4>
+                </div>
+                <div class="productList">
+                    <div class="product">
+                        <figure>
+                            <img src="./Assets/logoOppo.png" alt="">
+                        </figure>
+                        <figcaption>
+                            <h3>Oppo</h3>
+                        </figcaption>
+                    </div>
+                    <div class="product">
+                        <figure>
+                            <img src="./Assets/logoInfinix.png" alt="">
+                        </figure>
+                        <figcaption>
+                            <h3>Infinix</h3>
+                        </figcaption>
+                    </div>
+                    <div class="product">
+                        <figure>
+                            <img src="./Assets/logoIphone.png" alt="">
+                        </figure>
+                        <figcaption>
+                            <h3>Iphone</h3>
+                        </figcaption>
+                    </div>
+                    <div class="product">
+                        <figure>
+                            <img src="./Assets/logoTechno.png" alt="">
+                        </figure>
+                        <figcaption>
+                            <h3>Techno</h3>
+                        </figcaption>
+                    </div>
+                </div>
+                <div class="productList">
+                    <div class="product">
+                        <figure>
+                            <img src="./Assets/logoSamsung.png" alt="">
+                        </figure>
+                        <figcaption>
+                            <h3>Samsung</h3>
+                        </figcaption>
+                    </div>
+                    <div class="product">
+                        <figure>
+                            <img src="./Assets/logoRealme.png" alt="">
+                        </figure>
+                        <figcaption>
+                            <h3>Realme</h3>
+                        </figcaption>
+                    </div>
+                    <div class="product">
+                        <figure>
+                            <img src="./Assets/logoVivo.png" alt="">
+                        </figure>
+                        <figcaption>
+                            <h3>Vivo</h3>
+                        </figcaption>
+                    </div>
+                    <div class="product">
+                        <figure>
+                            <img src="./Assets/logoXiaomi.png" alt="">
+                        </figure>
+                        <figcaption>
+                            <h3>Xiaomi</h3>
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-    <footer>
+    <footer id="contactUs">
+        <div class="footTitle">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="footDesc">
+            <div class="footDetail">
+                <div class="footContainer">
+                    <div class="footImg">
+                        <img src="./Assets/instagram.png" alt="">
+                    </div>
+                    <div class="footText">
+                        <h3>Alfindo Jaya</h3>
+                    </div>
+                </div>
+                <div class="footContainer">
+                    <div class="footImg">
+                        <img src="./Assets/WhatsApp.png" alt="">
+                    </div>
+                    <div class="footText">
+                        <h3>(+62) 813 4544 9999</h3>
+                    </div>
+                </div>
+                <div class="footContainer">
+                    <div class="footImg">
+                        <img src="./Assets/gmail.png" alt="">
+                    </div>
+                    <div class="footText">
+                        <h3>bellaapries0144@gmail.com</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="footQuotes">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum temporibus, quidem accusamus, culpa enim aperiam fugiat iure, molestias eum fuga error labore pariatur nulla possimus rerum perspiciatis. In, laborum quos?</p>
+            </div>
+        </div>
 
+        <div class="Copyright">
+            <p>Copyright@2024 Alfindo Jaya. All Rights Reserved.</p>
+        </div>
     </footer>
     <script src="./JS/Home.js"></script>
 </body>

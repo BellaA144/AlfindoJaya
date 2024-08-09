@@ -12,6 +12,8 @@ html, body {
 }
 
 header{
+    position: fixed;
+    z-index: 10;
     display: flex;
     height: 10vh;
     justify-content: center;
@@ -21,6 +23,7 @@ header{
         -1px 1px 0px black, /* Shadow kiri bawah */
         1px -1px 0px black, /* Shadow kanan atas */
         -1px -1px 0px black; /* Shadow kiri atas */
+    ;
     background: rgb(240,173,173);
     background: linear-gradient(150deg, rgba(240,173,173,1) 0%, rgba(174,172,255,1) 50%, rgba(197,238,242,1) 100%);
 }
@@ -50,9 +53,14 @@ nav{
     height: 7vh;
 }
 
-.NavProfile img{
-    max-width: 100%;
-    max-height: 100%;
+.NavProfile h1{
+    font-size: 2.5rem;
+    text-shadow: 
+        2px 2px 0px black, /* Shadow kanan bawah */
+        -2px 2px 0px black, /* Shadow kiri bawah */
+        2px -2px 0px black, /* Shadow kanan atas */
+        -2px -2px 0px black; /* Shadow kiri atas */
+    ;
 }
 
 .NavMenu{
@@ -60,6 +68,17 @@ nav{
     align-items: center;
     justify-content: center;
     height: 7vh;
+}
+
+.NavMenu h4{
+    font-size: 1.3em;
+    color: #f4f4f4;
+    text-shadow:
+        1.3px 1.3px 0px black, /* Shadow kanan bawah */
+        -1.3px 1.3px 0px black, /* Shadow kiri bawah */
+        1.3px -1.3px 0px black, /* Shadow kanan atas */
+        -1.3px -1.3px 0px black; /* Shadow kiri atas */
+    ;
 }
 
 ul{
@@ -72,12 +91,17 @@ ul li{
     list-style-type: none;
 }
 
+.hyperlink{
+    text-decoration: none;
+}
+
 .rightNav{
     width: 20vw;
     height: 8vh;
 }
 
 main{
+    margin-top: 10vh;
     width: 100vw;
     background-color: #f4f4f4;
 }
@@ -155,10 +179,10 @@ main{
     color: #f4f4f4;
     text-align: center;
     text-shadow:
-        1px 1px 0px black, /* Shadow kanan bawah */
-        -1px 1px 0px black, /* Shadow kiri bawah */
-        1px -1px 0px black, /* Shadow kanan atas */
-        -1px -1px 0px black; /* Shadow kiri atas */
+        1.5px 1.5px 0px black, /* Shadow kanan bawah */
+        -1.5px 1.5px 0px black, /* Shadow kiri bawah */
+        1.5px -1.5px 0px black, /* Shadow kanan atas */
+        -1.5px -1.5px 0px black; /* Shadow kiri atas */
     ;
     font-size: 3rem;
 }
@@ -185,10 +209,10 @@ main{
     background: linear-gradient(150deg, rgba(240,173,173,1) 0%, rgba(174,172,255,1) 50%, rgba(197,238,242,1) 100%);
     color: white; 
     text-shadow:
-        0.5px 0.5px 0px black, /* Shadow kanan bawah */
-        -0.5px 0.5px 0px black, /* Shadow kiri bawah */
-        0.5px -0.5px 0px black, /* Shadow kanan atas */
-        -0.5px -0.5px 0px black; /* Shadow kiri atas */
+        1px 1px 0px black, /* Shadow kanan bawah */
+        -1px 1px 0px black, /* Shadow kiri bawah */
+        1px -1px 0px black, /* Shadow kanan atas */
+        -1px -1px 0px black; /* Shadow kiri atas */
     ;
     border-radius: 20px;
     border: none;
@@ -211,13 +235,353 @@ main{
     ;
 }
 
+.detailButton button:active {
+    transform: scale(0.95);
+}
+
 .aboutMe{
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 80vh;
+    height: 90vh;
     background-color: #aeaef6;
-    border-radius: 5% 5% 0% 0%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+}
+
+.aboutDesc, .aboutImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 60vh;
+    flex-shrink: 0;
+}
+
+.aboutDesc h4{
+    text-align: left;
+    font-size: 1.5em;
+    color: #f4f4f4;
+    text-shadow:
+        1px 1px 0px black, /* Shadow kanan bawah */
+        -1px 1px 0px black, /* Shadow kiri bawah */
+        1px -1px 0px black, /* Shadow kanan atas */
+        -1px -1px 0px black; /* Shadow kiri atas */
+    ;
+}
+
+.aboutImg img{
+    width: 80%;
+    height: 100%;
+}
+
+.productMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+    background-color: rgba(174,172,255,0.1);
+}
+
+.productContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 80vw;
+    height: 75vh;
+    box-shadow: 0 4px 10px 0 rgba(174,172,255,0.5);
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(100px); /* Posisi awal di bawah */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.productContainer.visible {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+.productTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 12vh;
+}
+
+.productTitle h4{   
+    font-size: 2em;
+    color: #f4f4f4;
+    text-shadow:
+        2px 2px 0px black, /* Shadow kanan bawah */
+        -2px 2px 0px black, /* Shadow kiri bawah */
+        2px -2px 0px black, /* Shadow kanan atas */
+        -2px -2px 0px black; /* Shadow kiri atas */
+    ;
+}
+
+.productList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80vw;
+    height: 30vh;
+}
+
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 25vh;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+
+.product:hover{
+    transform: scale(1.1);
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 20vh;
+}
+
+figure img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+figcaption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 5vh;
+}
+
+figcaption h3{
+    font-size: 1.5em;
+    color: #f4f4f4;
+    text-shadow:
+        1.5px 1.5px 0px black, /* Shadow kanan bawah */
+        -1.5px 1.5px 0px black, /* Shadow kiri bawah */
+        1.5px -1.5px 0px black, /* Shadow kanan atas */
+        -1.5px -1.5px 0px black; /* Shadow kiri atas */
+    ;
+}
+
+.space{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 5vh;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: space-around;
+    width: 100vw;
+    height: 50vh;
+    background-color: #aeaef6;
+}
+
+.Copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 5vh;
+}
+
+.Copyright p{
+    font-size: 1.5em;
+    color: #f4f4f4;
+    text-shadow:
+        1px 1px 0px black, /* Shadow kanan bawah */
+        -1px 1px 0px black, /* Shadow kiri bawah */
+        1px -1px 0px black, /* Shadow kanan atas */
+        -1px -1px 0px black; /* Shadow kiri atas */
+    ;
+}
+
+.footTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23vw;
+    height: 15vh;
+}
+
+.footTitle h1{
+    font-size: 2.5em;
+    color: #f4f4f4;
+    text-shadow:
+        1px 1px 0px black, /* Shadow kanan bawah */
+        -1px 1px 0px black, /* Shadow kiri bawah */
+        1px -1px 0px black, /* Shadow kanan atas */ 
+        -1px -1px 0px black; /* Shadow kiri atas */
+    ;
+}
+
+.footDesc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    width: 100vw;
+    height: 30vh;
+}
+
+.footDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    width: 40vw;
+    height: 30vh;
+}
+
+.footContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 7vh;
+}
+
+.footImg{
+    width: 5vw;
+    height: 5vh;
+}
+
+.footImg img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.footText{
+    padding-left: 10px;
+    display: flex; 
+    justify-content: baseline;
+    align-items: center;
+    width: 40vw;
+    height: 5vh;
+}
+
+.footText h3{
+    font-size: 1.3em;
+    color: #f4f4f4;
+    text-shadow:
+        1.2px 1.2px 0px black, /* Shadow kanan bawah */
+        -1.2px 1.2px 0px black, /* Shadow kiri bawah */
+        1.2px -1.2px 0px black, /* Shadow kanan atas */
+        -1.2px -1.2px 0px black; /* Shadow kiri atas */
+    ;
+}
+
+.footQuotes{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 18vh;
+}
+
+.footQuotes p{
+    font-size: 1.3em;
+    color: #f4f4f4;
+    text-shadow:
+        1px 1px 0px black, /* Shadow kanan bawah */
+        -1px 1px 0px black, /* Shadow kiri bawah */
+        1px -1px 0px black, /* Shadow kanan atas */
+        -1px -1px 0px black; /* Shadow kiri atas */
+    ;
+}
+
+@media (max-width: 768px) {
+    .leftNav, .rightNav, .NavProfile, .NavMenu, ul, .productMenu, .contentMain, .aboutDesc, .aboutImg, .productTitle, .productList, .product, footer, .footTitle, .footDesc, .footDetail, .footContainer, .footImg, .footText, .footQuotes {
+        width: 100vw;
+        height: auto;
+    }
+    
+    .leftNav, .rightNav {
+        flex-direction: column;
+    }
+
+    .product {
+        width: 40vw;
+        height: auto;
+    }
+
+    .productList {
+        flex-direction: column;
+    }
+
+    .NavProfile h1 {
+        font-size: 1.5rem;
+    }
+
+    .rightTitle h1 {
+        font-size: 2rem;
+    }
+
+    .detailButton button {
+        width: 80vw;
+        height: 7vh;
+        font-size: 1.2em;
+    }
+
+    .aboutDesc, .aboutImg {
+        width: 90vw;
+        height: auto;
+    }
+
+    .aboutDesc h4 {
+        font-size: 1.2em;
+    }
+
+    .footTitle h1 {
+        font-size: 2em;
+    }
+
+    .footDesc {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footContainer {
+        width: 80vw;
+        height: auto;
+    }
+
+    .footText {
+        width: 80vw;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header, .NavProfile h1, .rightTitle h1, .aboutDesc h4, .productTitle h4, .detailButton button, .Copyright p, .footTitle h1 {
+        font-size: smaller;
+    }
+
+    .product {
+        width: 80vw;
+        height: auto;
+    }
 }
